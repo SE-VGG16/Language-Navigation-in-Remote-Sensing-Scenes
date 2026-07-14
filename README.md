@@ -63,7 +63,7 @@ soar-uav-vln/
 Python 3.10 or newer is recommended.
 
 ```bash
-git clone <your-github-url>
+git clone <github-url>
 cd soar-uav-vln
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
