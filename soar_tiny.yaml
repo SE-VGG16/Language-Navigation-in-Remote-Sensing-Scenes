@@ -1,0 +1,56 @@
+seed: 42
+
+tokenizer:
+  output_size: 128
+  field_of_view_m: 80.0
+  focal_length_px: 320.0
+  canonicalize_heading: true
+  align_corners: false
+
+encoder:
+  image_size: 128
+  patch_size: 16
+  embed_dim: 128
+  depth: 3
+  num_heads: 4
+  mlp_ratio: 4.0
+  dropout: 0.1
+
+bev:
+  use_refinement: true
+
+memory:
+  world_size_m: 256.0
+  world_resolution_m: 2.0
+  eps: 1.0e-6
+
+text:
+  mode: tiny
+  vocab_size: 8192
+  max_length: 48
+  embed_dim: 128
+  depth: 2
+  num_heads: 4
+  dropout: 0.1
+  freeze: false
+  model_name: sentence-transformers/all-MiniLM-L6-v2
+
+grounding:
+  depth: 2
+  num_heads: 4
+  mlp_ratio: 4.0
+  dropout: 0.1
+
+loss:
+  heatmap_weight: 1.0
+  coordinate_weight: 1.0
+  stop_weight: 0.2
+
+training:
+  batch_size: 4
+  epochs: 3
+  learning_rate: 0.0002
+  weight_decay: 0.01
+  num_workers: 0
+  grad_clip: 1.0
+  success_radius_m: 5.0
